@@ -1,20 +1,22 @@
 from PySide2.QtWidgets import *
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtCore import QFile
+from PySide2.QtGui import QIcon
 from math import *
 
 
 class OhataWin(QWidget):
-    def __init__(self, screen_geometry: tuple, parent=None):
+    def __init__(self, screen_geometry: tuple, win_icon: str, parent=None):
         QWidget.__init__(self, parent)
-        designer_file = QFile("ohata.ui")
+        designer_file = QFile("UI/ohata.ui")
         designer_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.ui = loader.load(designer_file, self)
         designer_file.close()
         self.setWindowTitle("Модель Окамура-Хата")
-        self.setMaximumSize(screen_geometry[0]//2, screen_geometry[1]//3)
-        self.setMinimumSize(screen_geometry[0]//2, screen_geometry[1]//3)
+        self.setWindowIcon(QIcon(win_icon))
+        self.setMaximumSize(screen_geometry[0]//2, screen_geometry[1]//2.3)
+        self.setMinimumSize(screen_geometry[0]//2, screen_geometry[1]//2.3)
         self.error = QErrorMessage(self)
         grid_layout = QGridLayout()
         grid_layout.addWidget(self.ui)

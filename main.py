@@ -1,6 +1,7 @@
 from PySide2.QtWidgets import *
 from PySide2.QtCore import QFile
 from PySide2.QtUiTools import QUiLoader
+from PySide2.QtGui import QIcon
 from graph import HistWin, PhDifWin, CorrelationWin
 from ohata import OhataWin
 import sys
@@ -14,17 +15,23 @@ from tkinter.filedialog import askopenfilename
 class MainWin(QWidget):
     def __init__(self, width: int, height: int, parent=None):
         QWidget.__init__(self, parent)
-        designer_file = QFile("main.ui")
+        designer_file = QFile("UI/main.ui")
         designer_file.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.ui = loader.load(designer_file, self)
         designer_file.close()
+
         self.error = QErrorMessage(self)
         self.msg_info = QMessageBox(self)
+
         self.setWindowTitle("Excel Jxxx File Opener")
+        self.win_icon = 'icons/icon_excel.png'
+        self.setWindowIcon(QIcon(self.win_icon))
+
         self.screen_geometry = (width, height)
-        self.setMinimumSize(width//4, height//7)
-        self.setMaximumSize(width//4, height//7)
+        self.setMinimumSize(width//3, height//5)
+        self.setMaximumSize(width//3, height//5)
+
         grid_layout = QGridLayout()
         grid_layout.addWidget(self.ui)
         self.setLayout(grid_layout)
@@ -39,7 +46,7 @@ class MainWin(QWidget):
         self.ui.button_file.clicked.connect(self.open_file_jxxx)
 
     def open_ohata(self):
-        self.win = OhataWin(self.screen_geometry)
+        self.win = OhataWin(self.screen_geometry, self.win_icon)
         self.win.show()
 
     def show_msg_info(self, msg: str, title: str):
@@ -78,10 +85,10 @@ class MainWin(QWidget):
             self.ms_error('Ошибка открытия файла', 'Не был выбран файл!', 'IndexError')
 
         if data:
-            self.hist_ch1 = HistWin('Chanel 1', 1, 'hist2.ui', self.data, self.screen_geometry)
-            self.hist_ch2 = HistWin('Chanel 2', 2, 'hist2.ui', self.data, self.screen_geometry)
-            self.ph_dif = PhDifWin('Phase difference', 3, 'hist.ui', self.data, self.screen_geometry)
-            self.correlation = CorrelationWin('Correlation', 'hist.ui', data, self.screen_geometry)
+            self.hist_ch1 = HistWin('Chanel 1', self.win_icon, 1, 'UI/hist2.ui', self.data, self.screen_geometry)
+            self.hist_ch2 = HistWin('Chanel 2', self.win_icon, 2, 'UI/hist2.ui', self.data, self.screen_geometry)
+            self.ph_dif = PhDifWin('Phase difference', self.win_icon, 3, 'UI/hist.ui', self.data, self.screen_geometry)
+            self.correlation = CorrelationWin('Correlation', self.win_icon, 'UI/hist.ui', data, self.screen_geometry)
 
             self.hist_ch1.show()
             self.hist_ch2.show()

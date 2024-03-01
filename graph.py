@@ -1,6 +1,7 @@
 import math
 from PySide2.QtCore import QFile
 from PySide2.QtUiTools import QUiLoader
+from PySide2.QtGui import QIcon
 from PySide2.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas, NavigationToolbar2QT as NavigationToolbar)
@@ -19,7 +20,7 @@ class MplWidget(QWidget):  # Класс виджета для графика
 
 
 class GraphMain(QWidget):
-    def __init__(self, win_title: str, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
+    def __init__(self, win_title: str, win_icon: str, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
         QWidget.__init__(self, parent)
         designer_file = QFile(ui_file)
         designer_file.open(QFile.ReadOnly)
@@ -28,6 +29,7 @@ class GraphMain(QWidget):
         self.ui = loader.load(designer_file, self)
         designer_file.close()
         self.setWindowTitle(win_title)
+        self.setWindowIcon(QIcon(win_icon))
         self.setMinimumSize(screen_geometry[0] // 2, screen_geometry[1] // 2)
         self.setMaximumSize(screen_geometry[0] // 2, screen_geometry[1] // 2)
         grid_layout = QGridLayout()
@@ -48,8 +50,8 @@ class GraphMain(QWidget):
 
 
 class HistWin(GraphMain):
-    def __init__(self, win_title: str, index_data: int, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
-        GraphMain.__init__(self, win_title, ui_file, data, screen_geometry, parent)
+    def __init__(self, win_title: str, win_icon: str, index_data: int, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
+        GraphMain.__init__(self, win_title, win_icon, ui_file, data, screen_geometry, parent)
 
         self.create_hist(win_title, index_data)
         self.ui.lineEdit.setText(str(self.quadratic_mean(index_data)))
@@ -102,8 +104,8 @@ class HistWin(GraphMain):
 
 
 class PhDifWin(GraphMain):
-    def __init__(self, win_title: str, index_data: int, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
-        GraphMain.__init__(self, win_title, ui_file, data, screen_geometry, parent)
+    def __init__(self, win_title: str, win_icon: str, index_data: int, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
+        GraphMain.__init__(self, win_title, win_icon, ui_file, data, screen_geometry, parent)
 
         self.create_graph(win_title, index_data)
 
@@ -117,8 +119,8 @@ class PhDifWin(GraphMain):
 
 
 class CorrelationWin(GraphMain):
-    def __init__(self, win_title: str, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
-        GraphMain.__init__(self, win_title, ui_file, data, screen_geometry, parent)
+    def __init__(self, win_title: str, win_icon: str, ui_file: str, data: tuple, screen_geometry: tuple, parent=None):
+        GraphMain.__init__(self, win_title, win_icon, ui_file, data, screen_geometry, parent)
 
         self.data1 = self.get_data(data[0])
         self.data2 = self.get_data(data[1])

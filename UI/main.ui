@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWin</class>
+ <widget class="QWidget" name="mainWin">
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="design.qrc">
+    <normaloff>:/win_icon/icons/icon_excel.png</normaloff>:/win_icon/icons/icon_excel.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color: rgb(109, 109, 109);
+	color: white;
+	font: bold 14px;
+}
+QPushButton{
+	border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+	border-color: beige;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 6px;
+}
+QPushButton:pressed{background-color: red;}
+QProgressBar {
+    border: 2px beige;
+    border-radius: 5px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #a9ff70;
+    width: 20px;
+	margin: 0.5px;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_file">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_file">
+       <property name="text">
+        <string>Выбрать файл</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="button_graph">
+         <property name="text">
+          <string>Построить графики</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_ohata">
+         <property name="text">
+          <string>Модель Окамура-Хата</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="design.qrc"/>
+ </resources>
+ <connections/>
+</ui>

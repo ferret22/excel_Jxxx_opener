@@ -12,11 +12,11 @@ Excel Jxxx-file Opener
 - **[Завершение](https://github.com/ferret22/excel_Jxxx_opener/tree/master#завершение)**
 
 ## ***Приветствие***
-Данная программа предназначена для обратботки _специальных_ файлов .xlsx и построения графиков по данным из этих файлов.
+Данная программа предназначена для обработки _специальных_ файлов .xlsx и построения графиков по данным из этих файлов.
 
 Этот проект является результатом моей курсовой работы.
 
-А этот репозиторий я создал, из интераса в изучении [Git](https://git-scm.com/) и [GitHub](https://github.com/).
+А этот репозиторий я создал, из интереса в изучении [Git](https://git-scm.com/) и [GitHub](https://github.com/).
 
 ![git](https://git-scm.com/images/logo@2x.png) ![github](https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png)
 

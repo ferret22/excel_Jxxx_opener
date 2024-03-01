@@ -1,15 +1,15 @@
 Excel Jxxx-file Opener
 ======================
 ## ***Содержание***
-- **[Приветсвие]()**
-- **[Основная часть]()**
+- **[Приветсвие](https://github.com/ferret22/excel_Jxxx_opener/tree/master#приветсвие)**
+- **[Основная часть](https://github.com/ferret22/excel_Jxxx_opener/tree/master#основная-часть)**
   + **[Вид главного окна](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#вид-главного-окна)**
   + **[Окно "Модель Окамура-Хата"](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#окно-модель-окамура-хата)**
   + **[Графики](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#графики)**
   + **[Данные в .xlsx файле](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#данные-в-xlsx-файле)**
   + **[Файлы .txt](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#файлы-txt)**
   + **[Запуск через код](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#запуск-через-код)**
-- **[Завершение]()**
+- **[Завершение](https://github.com/ferret22/excel_Jxxx_opener/tree/master#завершение)**
 
 ## ***Приветсвие***
 Данная программа предназначена для обратботки _специальных_ файлов .xlsx и построения графиков по данным из этих файлов.
@@ -17,6 +17,7 @@ Excel Jxxx-file Opener
 Этот проект является результатом моей курсовой работы.
 
 А этот репозиторий я создал, из интераса в изучении [Git](https://git-scm.com/) и [GitHub](https://github.com/).
+
 ![git](https://git-scm.com/images/logo@2x.png) ![github](https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png)
 
 ## ***Основная часть***

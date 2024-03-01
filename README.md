@@ -1,5 +1,13 @@
 Excel Jxxx-file Opener
 ======================
+## ***Содержание***
++ **[Вид главного окна](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#вид-главного-окна)**
++ **[Окно "Модель Окамура-Хата"](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#окно-модель-окамура-хата)**
++ **[Графики](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#графики)**
++ **[Данные в .xlsx файле](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#данные-в-xlsx-файле)**
++ **[Файлы .txt](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#файлы-txt)**
++ **[Запуск через код](https://github.com/ferret22/excel_Jxxx_opener?tab=readme-ov-file#запуск-через-код)**
+
 ### ***Вид главного окна***
 ![main_win](images/main_win.png)
 
@@ -15,7 +23,7 @@ Excel Jxxx-file Opener
 
 ![open_file](images/open_file.png)
 
-### *Окно "Модель Окамура-Хата"*
+### ***Окно "Модель Окамура-Хата"***
 ![ohata_win](images/ohata_win.png)
 
 Открывается при нажатии кнопки *"Модель Окамура-Хата"*.
@@ -24,7 +32,7 @@ Excel Jxxx-file Opener
 
 **!ВАЖНО** Для этого окна не требуется .xlsx файл
 
-### *Графики*
+### ***Графики***
 **!ВАЖНО** Для этого окна требуется .xlsx файл
 
 После нажатия *"Пострить графики"* запустится процесс построения графиков.
@@ -41,7 +49,7 @@ Excel Jxxx-file Opener
 
 Вид графиков зависит от данных в .xlsx файле.
 
-### *Данные в .xlsx файле*
+### ***Данные в .xlsx файле***
 Данные в фале выглядят следуещим образом.
 
 В нашем случае это [J004.xlsx](https://github.com/ferret22/excel_Jxxx_opener/blob/master/J004.xlsx).
@@ -50,7 +58,7 @@ Excel Jxxx-file Opener
 
 **!ВАЖНО** В файле порядка 30 тысяч строк
 
-### *Файлы .txt*
+### ***Файлы .txt***
 Во время работы программы будет создана папка с файлами .txt, котрые будут содержать данные из файла .xlsx
 
 В название папки и файлов .txt будет содержать название файла .xlsx
@@ -59,7 +67,7 @@ Excel Jxxx-file Opener
 
 ![files](images/files.png)
 
-### *Запуск через код*
+### ***Запуск через код***
 Для запуска программы через код использовать библиотеки записанные в [requirements.txt](https://github.com/ferret22/excel_Jxxx_opener/blob/master/requirements.txt)
 
 А иммено:
